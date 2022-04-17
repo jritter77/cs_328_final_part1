@@ -35,43 +35,7 @@ values (
     3,
     2,
     1937
-)
-
-insert into props 
-values (
-    'Jane Doe',
-    '555-555-5555',
-    '555 Alley way, Eureka CA 95501',
-    'Fixer Upper',
-    80000,
-    '555 Alley way, Eureka CA 95501',
-    'Eureka',
-    'Residential',
-    800,
-    30,
-    2,
-    1,
-    1962
-)
-
-
-insert into props 
-values (
-    'John Smith',
-    '555-555-5555',
-    '123 County Ln, Eureka CA 95501',
-    'Barn',
-    100000,
-    '131 County Ln, Eureka CA 95501',
-    'Eureka',
-    'Commercial',
-    1000,
-    50,
-    0,
-    2,
-    1948
-)
-";
+)";
 
 
 $props_query_stmt = oci_parse($conn, $props_query_str);
@@ -95,12 +59,10 @@ while (oci_fetch($props_query_stmt)) {
 
 oci_free_statement($props_query_stmt);
 
-echo 'Table Created!';
 
 
 
 
-oci_free_statement($empl_query_stmt);
 oci_close($conn);
 
 
