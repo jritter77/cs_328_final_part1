@@ -22,7 +22,7 @@ $props_query_str = "drop table properties";
 
 $props_query_stmt = oci_parse($conn, $props_query_str);
 
-oci_execute($props_query_stmt, OCI_DEFAULT);
+oci_execute($props_query_stmt, OCI_COMMIT_ON_SUCCESS);
 
 oci_free_statement($props_query_stmt);
 
@@ -46,7 +46,7 @@ create table properties(
 
 $props_query_stmt = oci_parse($conn, $props_query_str);
 
-oci_execute($props_query_stmt, OCI_DEFAULT);
+oci_execute($props_query_stmt, OCI_COMMIT_ON_SUCCESS);
 
 oci_free_statement($props_query_stmt);
 
