@@ -17,7 +17,14 @@ else {
 }
 
 
+$props_query_str = "drop table properties";
 
+
+$props_query_stmt = oci_parse($conn, $props_query_str);
+
+oci_execute($props_query_stmt, OCI_DEFAULT);
+
+oci_free_statement($props_query_stmt);
 
 $props_query_str = "
 create table properties(
@@ -42,6 +49,9 @@ $props_query_stmt = oci_parse($conn, $props_query_str);
 
 oci_execute($props_query_stmt, OCI_DEFAULT);
 
+oci_free_statement($props_query_stmt);
+
+
 $props_query_str = "
 insert into props 
 values (
@@ -65,6 +75,9 @@ values (
 $props_query_stmt = oci_parse($conn, $props_query_str);
 
 oci_execute($props_query_stmt, OCI_DEFAULT);
+
+oci_free_statement($props_query_stmt);
+
 
 
 
