@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+footer {
+  width: 100%;
+  background: rgb(0, 124, 31);
+  padding: 16px 0px;
+}
+
+footer p {
+  text-align: center;
+  color: white;
+  font-size: large;
+}
+
+nav {
+  display: flex;
+  height: 64px;
+  background: rgb(0, 124, 31);
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav a {
+  font-size: large;
+  color: white;
+  text-decoration: none;
+}
+
+#page_container {
+  text-align: center;
+  background: linear-gradient(to top, rgb(255, 250, 176), white 60%);
+  flex-grow: 1;
+  padding-bottom: 64px;
+}

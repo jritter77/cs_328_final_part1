@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CS 328 Assignment 2</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Jake Ritter's submission for CS 328 Final Homework Part 1."
+    />
+
+    <link rel="stylesheet" href="./common.css" />
+    <link rel="stylesheet" href="./seller.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="./index.html">Home</a>
+        <a href="./admin.html">Admin</a>
+      </nav>
+    </header>
+
+    <div id="page_container">
+      <section id="form_container">
+        <h2>Seller Information</h2>
+
+        <div>
+          <form>
+            <section id="contact_info">
+              <h3>Contact Information</h3>
+
+              <div>
+                <p id="name_group">
+                  <label for="seller_name">Name</label>
+                  <input id="seller_name" name="seller_name" required />
+                </p>
+
+                <p id="phone_group">
+                  <label for="seller_phone">Phone</label>
+                  <input
+                    type="tel"
+                    id="seller_phone"
+                    name="seller_phone"
+                    required
+                  />
+                </p>
+
+                <p id="address_group">
+                  <label for="seller_address">Address</label>
+                  <input id="seller_address" name="seller_address" required />
+                </p>
+              </div>
+            </section>
+
+            <section id="building_info">
+              <h3>Building Information</h3>
+
+              <div>
+                <p id="building_name_group">
+                  <label for="building_name">Name</label>
+                  <input id="building_name" name="building_name" required />
+                </p>
+
+                <p id="building_price_group">
+                  <label for="building_price">Price</label>
+                  <input
+                    type="number"
+                    id="building_price"
+                    name="building_price"
+                    required
+                  />
+                </p>
+
+                <p id="building_address_group">
+                  <label for="building_address">Address</label>
+                  <input
+                    id="building_address"
+                    name="building_address"
+                    required
+                  />
+                </p>
+              </div>
+            </section>
+
+            <section id="area_selector">
+              <h3>Area</h3>
+
+              <div>
+                <p>
+                  <label for="eureka">Eureka</label>
+                  <input
+                    type="radio"
+                    id="eureka"
+                    name="area"
+                    value="Eureka"
+                    checked
+                  />
+                </p>
+
+                <p>
+                  <label for="arcata">Arcata</label>
+                  <input type="radio" id="arcata" name="area" value="Arcata" />
+                </p>
+
+                <p>
+                  <label for="ferndale">Ferndale</label>
+                  <input
+                    type="radio"
+                    id="ferndale"
+                    name="area"
+                    value="Ferndale"
+                  />
+                </p>
+
+                <p>
+                  <label for="fortuna">Fortuna</label>
+                  <input
+                    type="radio"
+                    id="fortuna"
+                    name="area"
+                    value="Fortuna"
+                  />
+                </p>
+
+                <p>
+                  <label for="blue_lake">Blue Lake</label>
+                  <input
+                    type="radio"
+                    id="blue_lake"
+                    name="area"
+                    value="Blue Lake"
+                  />
+                </p>
+
+                <p>
+                  <label for="trinidad">Trinidad</label>
+                  <input
+                    type="radio"
+                    id="trinidad"
+                    name="area"
+                    value="Trinidad"
+                  />
+                </p>
+
+                <p>
+                  <label for="mckinleyville">McKinleyville</label>
+                  <input
+                    type="radio"
+                    id="mckinleyville"
+                    name="area"
+                    value="McKinleyville"
+                  />
+                </p>
+
+                <p>
+                  <label for="other_area">Other</label>
+                  <input
+                    type="radio"
+                    id="other_area"
+                    name="area"
+                    value="Other"
+                  />
+                </p>
+              </div>
+            </section>
+
+            <section id="type_selector">
+              <h3>Building Type</h3>
+
+              <div>
+                <p>
+                  <label for="commercial">Commercial</label>
+                  <input
+                    type="radio"
+                    id="commercial"
+                    name="type"
+                    value="commercial"
+                    checked
+                  />
+                </p>
+
+                <p>
+                  <label for="entertainment">Entertainment</label>
+                  <input
+                    type="radio"
+                    id="entertainment"
+                    name="type"
+                    value="entertainment"
+                  />
+                </p>
+
+                <p>
+                  <label for="residential">Residential</label>
+                  <input
+                    type="radio"
+                    id="residential"
+                    name="type"
+                    value="residential"
+                  />
+                </p>
+
+                <p>
+                  <label for="apartment">Apartment Complex</label>
+                  <input
+                    type="radio"
+                    id="apartment"
+                    name="type"
+                    value="apartment"
+                  />
+                </p>
+
+                <p>
+                  <label for="hotel">Hotel</label>
+                  <input type="radio" id="hotel" name="type" value="hotel" />
+                </p>
+
+                <p>
+                  <label for="other">Other</label>
+                  <input type="radio" id="other" name="type" value="other" />
+                </p>
+              </div>
+            </section>
+
+            <section id="building_specs">
+              <h3>Building Specs</h3>
+
+              <div>
+                <p>
+                  <label for="sqft">Square Footage</label>
+                  <input type="number" id="sqft" name="sqft" required />
+                </p>
+
+                <p>
+                  <label for="height">Overall Height</label>
+                  <input type="number" id="height" name="height" required />
+                </p>
+
+                <p>
+                  <label for="rooms"># of Rooms</label>
+                  <input type="number" id="rooms" name="rooms" required />
+                </p>
+
+                <p>
+                  <label for="floors"># of Floors</label>
+                  <input type="number" id="floors" name="floors" required />
+                </p>
+
+                <p>
+                  <label for="year_built">Year Built</label>
+                  <input
+                    type="number"
+                    id="year_built"
+                    name="year_built"
+                    required
+                  />
+                </p>
+              </div>
+            </section>
+
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      </section>
+
+      <img
+        src="https://thumbs.dreamstime.com/b/two-architects-shaking-hands-meeting-office-two-architects-shaking-hands-meeting-office-concept-138478515.jpg"
+        alt="architect image..."
+      />
+    </div>
+
+    <footer>
+      <p>&copy; Jake Ritter - 2022</p>
+    </footer>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
