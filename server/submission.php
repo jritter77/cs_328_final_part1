@@ -53,7 +53,7 @@ oci_free_statement($props_query_stmt);
 
 
 $props_query_str = "
-insert into props 
+insert into properties
 values (
     'Jane Doe',
     '555-555-5555',
