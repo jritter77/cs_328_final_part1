@@ -23,6 +23,10 @@ $empl_query_stmt = oci_parse($conn, $empl_query_str);
 
 oci_execute($empl_query_stmt, OCI_DEFAULT);
 
+while(oci_fetch($empl_query_stmt)) {
+    echo oci_result($empl_query_stmt, 'HIREDATE';)
+}
+
 $props_query_str = '
 
     drop table props;
