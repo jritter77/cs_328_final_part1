@@ -26,7 +26,10 @@ async function submitForm(e) {
     }
 
     console.log(sub);
-    let response = await post("./submission.php", JSON.stringify(sub));
+    let response = await post(
+      "../../server/submission.php",
+      JSON.stringify(sub)
+    );
     console.log(response);
   }
 }
