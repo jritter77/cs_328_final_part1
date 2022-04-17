@@ -27,6 +27,21 @@ while(oci_fetch($empl_query_stmt)) {
     echo oci_result($empl_query_stmt, 'HIREDATE');
 }
 
+
+$props_query_str = '
+    drop table props
+    ';
+
+
+$props_query_stmt = oci_parse($conn, $props_query_str);
+
+oci_execute($props_query_stmt, OCI_DEFAULT);
+
+oci_free_statement($props_query_stmt);
+
+echo 'Table Dropped!';
+
+
 $props_query_str = '
     create table props(
         seller_name varchar(30),
@@ -49,12 +64,14 @@ $props_query_stmt = oci_parse($conn, $props_query_str);
 
 oci_execute($props_query_stmt, OCI_DEFAULT);
 
+oci_free_statement($props_query_stmt);
+
 echo 'Table Created!';
 
 
 
+
 oci_free_statement($empl_query_stmt);
-oci_free_statement($props_query_stmt);
 oci_close($conn);
 
 
