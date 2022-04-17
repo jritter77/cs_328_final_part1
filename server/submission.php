@@ -22,19 +22,19 @@ else {
 $props_query_str = "
 insert into props 
 values (
-    'John Smith',
+    'Jane Doe',
     '555-555-5555',
-    '123 County Ln, Eureka CA 95501',
-    'Old Victorian',
-    120000,
-    '123 County Ln, Eureka CA 95501',
+    '555 Alley way, Eureka CA 95501',
+    'Fixer Upper',
+    80000,
+    '555 Alley way, Eureka CA 95501',
     'Eureka',
     'Residential',
-    1500,
-    50,
-    3,
+    800,
+    30,
     2,
-    1937
+    1,
+    1962
 )";
 
 
