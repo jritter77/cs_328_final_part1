@@ -44,6 +44,12 @@ create table properties(
 )
 ";
 
+$props_query_stmt = oci_parse($conn, $props_query_str);
+
+oci_execute($props_query_stmt, OCI_DEFAULT);
+
+oci_free_statement($props_query_stmt);
+
 echo 'Table Created!';
 
 oci_close($conn);
