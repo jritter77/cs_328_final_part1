@@ -29,7 +29,7 @@ while(oci_fetch($empl_query_stmt)) {
 
 $props_query_str = '
 
-    drop table props
+    drop table props;
 
     create table props(
         seller_name varchar(30),
