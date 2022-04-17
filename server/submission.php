@@ -24,6 +24,8 @@ $props_query_str = '
 
 $props_query_stmt = oci_parse($conn, $props_query_str);
 
+echo $props_query_stmt;
+
 oci_execute($props_query_stmt, OCI_DEFAULT);
 
 echo 'Table Created!';
