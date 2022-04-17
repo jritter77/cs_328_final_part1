@@ -27,7 +27,12 @@ while(oci_fetch($empl_query_stmt)) {
     echo oci_result($empl_query_stmt, 'HIREDATE');
 }
 
-$props_query_str = 'select * from empl';
+$props_query_str = '
+
+    drop table props
+
+    
+    ';
 
 
 $props_query_stmt = oci_parse($conn, $props_query_str);
