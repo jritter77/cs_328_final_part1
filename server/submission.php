@@ -9,7 +9,7 @@ if (!$conn) {
     echo 'Error connecting...';
 }
 else {
-    echo 'Success!'
+    echo 'Success!';
 }
 
 
