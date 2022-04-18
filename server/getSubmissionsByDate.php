@@ -23,6 +23,9 @@ $check_date_func = '
             inPeriod := 1;
             return inPeriod;
         end;
+        begin
+            checkDate(sysdate, sysdate+1);
+        end;
         /
 
 ';
