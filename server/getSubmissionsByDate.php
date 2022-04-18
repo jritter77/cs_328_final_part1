@@ -33,7 +33,7 @@ $check_date_func = '
 
 $check_date_stmt = oci_parse($conn, $check_date_func);
 
-oci_execute($check_date_func, OCI_DEFAULT);
+oci_execute($check_date_stmt, OCI_DEFAULT);
 
 $results = array();
 while ($row = oci_fetch_array($check_date_stmt, OCI_ASSOC)) {
@@ -42,7 +42,7 @@ while ($row = oci_fetch_array($check_date_stmt, OCI_ASSOC)) {
 
 echo json_encode($results);
 
-oci_free_statement($check_date_func);
+oci_free_statement($check_date_stmt);
 
 
 
