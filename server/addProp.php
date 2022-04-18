@@ -53,7 +53,7 @@ oci_bind_by_name($props_query_stmt, ':rooms', $req->rooms);
 oci_bind_by_name($props_query_stmt, ':floors', $req->floors);
 oci_bind_by_name($props_query_stmt, ':year_built', $req->year_built);
 
-oci_execute($props_query_stmt, OCI_DEFAULT);
+oci_execute($props_query_stmt, OCI_COMMIT_ON_SUCCESS);
 
 
 oci_free_statement($props_query_stmt);
@@ -63,6 +63,8 @@ oci_free_statement($props_query_stmt);
 
 
 oci_close($conn);
+
+echo 'Row added successfully'
 
 
 ?>
