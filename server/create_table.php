@@ -21,7 +21,7 @@ if (!$conn) {
 $props_query_str = "
 begin
 
-drop table properties;
+execute immediate 'drop table properties';
 
 create table properties(
     date_submitted date,
