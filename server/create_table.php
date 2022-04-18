@@ -26,6 +26,7 @@ oci_free_statement($props_query_stmt);
 
 $props_query_str = "
 create table properties(
+    date_submitted date,
     seller_name varchar(30),
     seller_phone varchar(12),
     seller_address varchar(50),
