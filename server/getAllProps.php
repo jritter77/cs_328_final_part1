@@ -26,9 +26,12 @@ $props_query_stmt = oci_parse($conn, $props_query_str);
 
 oci_execute($props_query_stmt, OCI_DEFAULT);
 
-while (oci_fetch($props_query_stmt)) {
-    echo oci_result($props_query_stmt, 'SELLER_NAME');
+$results = array();
+while ($row = oci_fetch_array($props_query_stmt, OCI_BOTH)) {
+    array_push($results, $row);
 }
+
+echo json_encode($results);
 
 oci_free_statement($props_query_stmt);
 
