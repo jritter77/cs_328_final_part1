@@ -11,10 +11,15 @@ async function populateTable() {
   let table = $("#props_table");
 
   for (let prop of props) {
-    $row = $("<tr></tr>");
+    let row = $("<tr></tr>");
 
-    $row.append($(`<td>${prop.seller}</td>`));
+    for (let col in prop) {
+      let c = `<td>${prop[col]}</td>`;
+      row.append(c);
+    }
+
+    table.append(row);
   }
 }
 
-getProps();
+populateTable();
