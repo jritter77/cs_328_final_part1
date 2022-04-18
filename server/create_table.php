@@ -41,7 +41,6 @@ execute immediate 'create table properties(
 )';
 
 end;
-/
 ";
 
 $props_query_stmt = oci_parse($conn, $props_query_str);
