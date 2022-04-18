@@ -25,7 +25,7 @@ $props_query_stmt = oci_parse($conn, $props_query_str);
 oci_execute($props_query_stmt, OCI_DEFAULT);
 
 $results = array();
-while ($row = oci_fetch_array($props_query_stmt, OCI_BOTH)) {
+while ($row = oci_fetch_array($props_query_stmt)) {
     array_push($results, $row);
 }
 
