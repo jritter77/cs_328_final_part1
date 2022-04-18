@@ -23,7 +23,7 @@ begin
 
 execute immediate 'drop table properties';
 
-create table properties(
+execute immediate 'create table properties(
     date_submitted date,
     seller_name varchar(30),
     seller_phone varchar(12),
@@ -38,7 +38,7 @@ create table properties(
     rooms number,
     floors number,
     year_built number
-);
+)';
 
 end;
 /
