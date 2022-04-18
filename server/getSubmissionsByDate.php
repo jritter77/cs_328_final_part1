@@ -36,8 +36,8 @@ $check_date_stmt = oci_parse($conn, $check_date_func);
 oci_execute($check_date_stmt, OCI_DEFAULT);
 
 $results = array();
-while ($row = oci_fetch_array($check_date_stmt, OCI_ASSOC)) {
-    array_push($results, $row);
+while (oci_fetch($check_date_stmt)) {
+    echo 
 }
 
 echo json_encode($results);
