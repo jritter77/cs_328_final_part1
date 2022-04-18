@@ -13,6 +13,7 @@ async function populateTable() {
   table.html("");
 
   table.append(`
+    <th>Sumbiission Date</th>
     <th>Seller Name</th>
     <th>Seller Phone</th>
     <th>Seller Address</th>
