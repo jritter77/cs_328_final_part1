@@ -15,16 +15,14 @@ if (!$conn) {
 
 
 
-$props_query_str = "drop table properties";
 
 
-$props_query_stmt = oci_parse($conn, $props_query_str);
-
-oci_execute($props_query_stmt, OCI_COMMIT_ON_SUCCESS);
-
-oci_free_statement($props_query_stmt);
 
 $props_query_str = "
+begin
+
+drop table properties;
+
 create table properties(
     date_submitted date,
     seller_name varchar(30),
@@ -40,7 +38,10 @@ create table properties(
     rooms number,
     floors number,
     year_built number
-)
+);
+
+end;
+/
 ";
 
 $props_query_stmt = oci_parse($conn, $props_query_str);

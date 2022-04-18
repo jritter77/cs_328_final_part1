@@ -18,7 +18,6 @@ if (!$conn) {
 
 $props_query_str = "
         create or replace procedure newDummyProp
-        is 
         begin
 
         insert into properties
