@@ -14,7 +14,6 @@ if (!$conn) {
 }
 
 
-$req = json_decode($_POST['req']);
 
 
 $props_query_str = "
@@ -41,7 +40,7 @@ $props_query_str = "
         )
         
         end;
-        /
+        
 ";
 
 
@@ -56,7 +55,7 @@ $props_query_str = "
         begin
         newDummyProp();
         end;
-        /
+        
 ";
 
 
