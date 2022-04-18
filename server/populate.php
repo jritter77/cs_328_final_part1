@@ -12,9 +12,7 @@ $conn = oci_connect("jr550", "Wo0dabu9a", $db_conn_str);
 if (!$conn) {
     echo 'Error connecting...';
 }
-else {
-    echo 'Success!';
-}
+
 
 
 

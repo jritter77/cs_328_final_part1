@@ -13,22 +13,22 @@ async function submitForm(e) {
     e.preventDefault();
     let inputs = $("input[type!=submit]");
 
-    let sub = {};
+    let submission = {};
 
     for (let i of inputs) {
       if (i.type !== "radio") {
-        sub[i.name] = i.value;
+        submission[i.name] = i.value;
       } else {
         if (i.checked) {
-          sub[i.name] = i.value;
+          submission[i.name] = i.value;
         }
       }
     }
 
-    console.log(sub);
+    console.log(submission);
     let response = await post(
-      "../../server/submission.php",
-      JSON.stringify(sub)
+      "../../server/addProp.php",
+      JSON.stringify(submission)
     );
     console.log(response);
   }
