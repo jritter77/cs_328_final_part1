@@ -1,4 +1,4 @@
-import { post } from "./WebRequest.js";
+import { get } from "./WebRequest.js";
 
 async function getProps() {
   let result = await get("../../server/getAllProps.php");
