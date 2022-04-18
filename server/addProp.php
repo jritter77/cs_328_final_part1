@@ -20,7 +20,7 @@ $req = json_decode($_POST['req']);
 $props_query_str = '
         insert into properties
         values (
-            get_date(),
+            curdate(),
             :seller_name,
             :seller_phone,
             :seller_address,
