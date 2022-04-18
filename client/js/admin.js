@@ -10,6 +10,24 @@ async function populateTable() {
   let props = await getProps();
   let table = $("#props_table");
 
+  table.html("");
+
+  table.append(`
+    <th>Seller Name</th>
+    <th>Seller Phone</th>
+    <th>Seller Address</th>
+    <th>Building Name</th>
+    <th>Building Price</th>
+    <th>Building Address</th>
+    <th>Area</th>
+    <th>Type</th>
+    <th>SQFT</th>
+    <th>Height</th>
+    <th>Rooms</th>
+    <th>Floors</th>
+    <th>Year Built</th>
+  `);
+
   for (let prop of props) {
     let row = $("<tr></tr>");
 
