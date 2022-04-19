@@ -57,7 +57,7 @@ oci_bind_by_name($props_query_stmt, ':year_built', $req->year_built);
 oci_execute($props_query_stmt, OCI_COMMIT_ON_SUCCESS);
 
 
-oci_free_statement($props_query_stmt);
+echo oci_free_statement($props_query_stmt);
 
 
 
@@ -65,7 +65,6 @@ oci_free_statement($props_query_stmt);
 
 oci_close($conn);
 
-echo 'Row added successfully'
 
 
 ?>
