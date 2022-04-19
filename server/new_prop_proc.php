@@ -14,21 +14,24 @@ if (!$conn) {
 }
 
 
-$create_table_str = "
-begin
 
- create_table();
+$props_query_str = '
+        begin
+            verifyPhone("555-555-5555");
+        end;
+';
 
-end;
-";
 
-$create_table_stmt = oci_parse($conn, $create_table_str);
+$props_query_stmt = oci_parse($conn, $props_query_str);
 
-oci_execute($create_table_stmt, OCI_COMMIT_ON_SUCCESS);
+echo oci_execute($props_query_stmt, OCI_COMMIT_ON_SUCCESS);
 
-oci_free_statement($create_table_stmt);
 
-echo 'Table Created!';
+oci_free_statement($props_query_stmt);
+
+
+
+
 
 oci_close($conn);
 
