@@ -15,7 +15,7 @@ if (!$conn) {
 
 
 $create_table_str = "
-create or replace procedure reset_table
+create or replace procedure create_table
 AS
 begin
 
