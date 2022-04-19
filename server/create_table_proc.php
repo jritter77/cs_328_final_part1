@@ -15,8 +15,7 @@ if (!$conn) {
 
 
 $create_table_str = "
-create or replace procedure create_table
-AS
+
 begin
 
 execute immediate 'drop table properties';
