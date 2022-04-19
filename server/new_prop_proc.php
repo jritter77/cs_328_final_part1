@@ -15,11 +15,11 @@ if (!$conn) {
 
 
 
-$props_query_str = '
+$props_query_str = "
         begin
-            verifyPhone("555-555-5555");
+            verifyPhone('555-555-5555');
         end;
-';
+";
 
 
 $props_query_stmt = oci_parse($conn, $props_query_str);
