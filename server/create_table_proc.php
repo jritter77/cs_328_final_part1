@@ -46,7 +46,7 @@ oci_execute($create_table_stmt, OCI_COMMIT_ON_SUCCESS);
 
 oci_free_statement($create_table_stmt);
 
-echo 'Procedure Created!';
+echo 'Table Created!';
 
 oci_close($conn);
 
