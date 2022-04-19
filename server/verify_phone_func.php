@@ -20,7 +20,7 @@ $props_query_str = '
         return number is 
             is_valid number := 0;
         begin
-            if length(phone) = 12 then
+            if length(phone) = 10 then
                 is_valid := 1;
             end if;
 

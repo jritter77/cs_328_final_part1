@@ -32,7 +32,7 @@ $create_table_str = "
 create table properties(
     date_submitted date,
     seller_name varchar(30),
-    seller_phone varchar(12),
+    seller_phone varchar(10),
     seller_address varchar(50),
     building_name varchar(30),
     building_price number,
