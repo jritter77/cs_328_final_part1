@@ -15,9 +15,28 @@ if (!$conn) {
 
 
 $create_table_str = "
+create or replace procedure reset_table
+AS
 begin
 
- exec create_table();
+execute immediate 'drop table properties';
+
+execute immediate 'create table properties(
+    date_submitted date,
+    seller_name varchar(30),
+    seller_phone varchar(12),
+    seller_address varchar(50),
+    building_name varchar(30),
+    building_price number,
+    building_address varchar(50),
+    area varchar(20),
+    type varchar(20),
+    sqft number,
+    height number,
+    rooms number,
+    floors number,
+    year_built number
+)';
 
 end;
 ";
@@ -28,7 +47,7 @@ oci_execute($create_table_stmt, OCI_COMMIT_ON_SUCCESS);
 
 oci_free_statement($create_table_stmt);
 
-echo 'Table Created!';
+echo 'Procedure Created!';
 
 oci_close($conn);
 
