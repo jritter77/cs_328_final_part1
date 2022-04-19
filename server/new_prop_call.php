@@ -18,7 +18,8 @@ $req = json_decode($_POST['req']);
 
 
 $props_query_str = '
-        exec new_prop(
+        begin
+        new_prop(
             :seller_name,
             :seller_phone,
             :seller_address,
@@ -32,7 +33,8 @@ $props_query_str = '
             :rooms,
             :floors,
             :year_built
-        )
+        );
+        end;
 ';
 
 
