@@ -27,7 +27,7 @@ async function submitForm(e) {
 
     console.log(submission);
     let response = await post(
-      "../../server/new_prop_call.php",
+      "../../server/new_prop.php",
       JSON.stringify(submission)
     );
     console.log(response);
