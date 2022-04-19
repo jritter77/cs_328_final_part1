@@ -20,6 +20,7 @@ $props_query_str = "
             if verifyPhone('555-555-5555') = 1 then
                  insert into properties(seller_name)
                  values ('Jake');
+            end if;
         end;
 ";
 
