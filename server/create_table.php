@@ -17,7 +17,7 @@ if (!$conn) {
 $create_table_str = "
 begin
 
- exec create_table();
+ create_table();
 
 end;
 ";
