@@ -17,7 +17,9 @@ if (!$conn) {
 
 $props_query_str = "
         begin
-            verifyPhone('555-555-5555');
+            if verifyPhone('555-555-5555') = 1 then
+                 insert into properties(seller_name)
+                 values ('Jake');
         end;
 ";
 
