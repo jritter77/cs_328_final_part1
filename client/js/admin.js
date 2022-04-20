@@ -30,11 +30,20 @@ async function getPropsByDate(startDate, endDate) {
   return JSON.parse(result);
 }
 
+function convertDate(dateStr) {
+  let dateArr = dateStr.split("-");
+  let year = dateArr[0].substr(2);
+  let month = months[parseInt(dateArr[1]) - 1];
+  let day = dateArr[2];
+
+  return `${day}-${month}-${year}`;
+}
+
 async function populateTable(e) {
   let startDate = $("#start_date");
   let endDate = $("#end_date");
 
-  console.log(startDate.val(), endDate.val());
+  console.log(convertDate(startDate));
 
   let props = await getPropsByDate();
   let table = $("#props_table");
