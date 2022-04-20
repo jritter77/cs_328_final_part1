@@ -40,18 +40,25 @@ function convertDate(dateStr) {
 }
 
 async function populateTable(e) {
-  let startDate = $("#start_date").val();
-  let endDate = $("#end_date").val();
+  let form = document.querySelector("form");
+  let isValid = form.checkValidity();
 
-  startDate = convertDate(startDate);
-  endDate = convertDate(endDate);
+  if (isValid) {
+    form.reportValidity();
+  } else {
+    e.preventDefault();
+    let startDate = $("#start_date").val();
+    let endDate = $("#end_date").val();
 
-  let props = await getPropsByDate(startDate, endDate);
-  let table = $("#props_table");
+    startDate = convertDate(startDate);
+    endDate = convertDate(endDate);
 
-  table.html("");
+    let props = await getPropsByDate(startDate, endDate);
+    let table = $("#props_table");
 
-  table.append(`
+    table.html("");
+
+    table.append(`
     <th>Sumbiission Date</th>
     <th>Seller Name</th>
     <th>Seller Phone</th>
@@ -68,15 +75,16 @@ async function populateTable(e) {
     <th>Year Built</th>
   `);
 
-  for (let prop of props) {
-    let row = $("<tr></tr>");
+    for (let prop of props) {
+      let row = $("<tr></tr>");
 
-    for (let col in prop) {
-      let c = `<td>${prop[col]}</td>`;
-      row.append(c);
+      for (let col in prop) {
+        let c = `<td>${prop[col]}</td>`;
+        row.append(c);
+      }
+
+      table.append(row);
     }
-
-    table.append(row);
   }
 }
 
