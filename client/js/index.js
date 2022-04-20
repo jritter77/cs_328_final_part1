@@ -30,6 +30,7 @@ async function submitForm(e) {
       "../../server/new_prop.php",
       JSON.stringify(submission)
     );
-    console.log(response);
+    alert("Property added!");
+    form.reset();
   }
 }
