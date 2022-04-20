@@ -28,6 +28,10 @@ $props_query_stmt = oci_parse($conn, $props_query_str);
 oci_bind_by_name($props_query_stmt, ':start_date', $req->start_date);
 oci_bind_by_name($props_query_stmt, ':end_date', $req->end_date);
 
+if (!$props_query_stmt) {
+    echo 'error!';
+}
+
 
 $r = oci_execute($props_query_stmt, OCI_DEFAULT);
 
