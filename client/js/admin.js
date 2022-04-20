@@ -43,6 +43,8 @@ async function populateTable(e) {
   let startDate = convertDate($("#start_date").val());
   let endDate = convertDate($("#end_date").val());
 
+  console.log(startDate, endDate);
+
   if (!startDate || !endDate) {
     alert("Please select a valid start date and end date.");
     return;
