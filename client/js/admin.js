@@ -34,7 +34,7 @@ function convertDate(dateStr) {
   let dateArr = dateStr.split("-");
   let year = dateArr[0].substr(2);
   let month = months[parseInt(dateArr[1]) - 1];
-  let day = parse_int(dateArr[2]) + 1;
+  let day = parseInt(dateArr[2]) + 1;
 
   return `${day}-${month}-${year}`;
 }
