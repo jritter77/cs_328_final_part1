@@ -40,7 +40,7 @@ function convertDate(dateStr) {
 }
 
 async function populateTable(e) {
-  let startDate = converDate($("#start_date").val());
+  let startDate = convertDate($("#start_date").val());
   let endDate = convertDate($("#end_date").val());
 
   let props = await getPropsByDate(startDate, endDate);
@@ -77,4 +77,4 @@ async function populateTable(e) {
   }
 }
 
-$("#submit_btn").click(() => populateTable());
+$("#submit_btn").click(populateTable);
