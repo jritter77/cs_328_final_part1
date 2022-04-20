@@ -7,7 +7,7 @@ async function submitForm(e) {
   let form = document.querySelector("form");
   let isValid = form.checkValidity();
 
-  if (isValid) {
+  if (!isValid) {
     form.reportValidity();
   } else {
     e.preventDefault();
