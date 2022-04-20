@@ -31,6 +31,11 @@ async function getPropsByDate(startDate, endDate) {
 }
 
 async function populateTable() {
+  let startDate = $("#start_date");
+  let endDate = $("#end_date");
+
+  console.log(startDate, endDate);
+
   let props = await getPropsByDate();
   let table = $("#props_table");
 
@@ -65,4 +70,4 @@ async function populateTable() {
   }
 }
 
-populateTable();
+$("#submit").click(populateTable);
