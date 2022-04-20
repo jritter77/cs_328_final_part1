@@ -1,13 +1,37 @@
 import { get } from "./WebRequest.js";
 
+const months = [
+  "JAN",
+  "FEB",
+  "MAR",
+  "APR",
+  "MAY",
+  "JUN",
+  "JUL",
+  "AUG",
+  "SEP",
+  "OCT",
+  "NOV",
+  "DEC",
+];
+
 async function getProps() {
   let result = await get("../../server/getAllProps.php");
   console.log(result);
   return JSON.parse(result);
 }
 
+async function getPropsByDate(startDate, endDate) {
+  let result = await post(
+    "../../server/getPropsForPeriod.php",
+    JSON.stringify({ start_date: startDate, end_date: endDate })
+  );
+  console.log(result);
+  return JSON.parse(result);
+}
+
 async function populateTable() {
-  let props = await getProps();
+  let props = await getPropsByDate();
   let table = $("#props_table");
 
   table.html("");
