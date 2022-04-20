@@ -13,16 +13,21 @@ if (!$conn) {
     echo 'Error connecting...';
 }
 
+$req = json_decode($_POST['req']);
 
 
 $props_query_str = '
         select * 
         from properties
-        where (date_submitted > sysdate - .5) and (date_submitted < sysdate)
+        where (date_submitted > :start_date) and (date_submitted < :end_date)
 ';
 
 
 $props_query_stmt = oci_parse($conn, $props_query_str);
+
+oci_bind_by_name($props_query_stmt, ':start_date', $req->start_date);
+oci_bind_by_name($props_query_stmt, ':end_date', $req->end_date);
+
 
 oci_execute($props_query_stmt, OCI_DEFAULT);
 

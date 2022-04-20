@@ -40,12 +40,10 @@ function convertDate(dateStr) {
 }
 
 async function populateTable(e) {
-  let startDate = $("#start_date");
-  let endDate = $("#end_date");
+  let startDate = converDate($("#start_date").val());
+  let endDate = convertDate($("#end_date").val());
 
-  console.log(convertDate(startDate.val()));
-
-  let props = await getPropsByDate();
+  let props = await getPropsByDate(startDate, endDate);
   let table = $("#props_table");
 
   table.html("");
