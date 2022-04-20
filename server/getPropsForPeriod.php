@@ -35,7 +35,7 @@ if (!$props_query_stmt) {
 
 $r = oci_execute($props_query_stmt, OCI_DEFAULT);
 
-if (!$r) {
+if ($r == []) {
     echo 'error!';
 }
 
