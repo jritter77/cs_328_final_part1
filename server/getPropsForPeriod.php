@@ -31,11 +31,6 @@ oci_bind_by_name($props_query_stmt, ':end_date', $req->end_date);
 
 $r = oci_execute($props_query_stmt, OCI_DEFAULT);
 
-if (!$r) {
-    $m = oci_error($conn);
-    echo $m;
-}
-
 
 $results = array();
 while ($row = oci_fetch_array($props_query_stmt, OCI_ASSOC)) {

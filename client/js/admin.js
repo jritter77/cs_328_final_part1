@@ -43,6 +43,11 @@ async function populateTable(e) {
   let startDate = convertDate($("#start_date").val());
   let endDate = convertDate($("#end_date").val());
 
+  if (!startDate || !endDate) {
+    alert("Please select a valid start date and end date.");
+    return;
+  }
+
   let props = await getPropsByDate(startDate, endDate);
   let table = $("#props_table");
 
