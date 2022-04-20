@@ -18,7 +18,7 @@ if (!$conn) {
 $props_query_str = '
         select * 
         from properties
-        where date_submitted >= sysdate - 1 and <= sysdate + 1
+        where date_submitted >= sysdate - 1 and date_submitted <= sysdate + 1
 ';
 
 
