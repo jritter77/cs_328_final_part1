@@ -29,12 +29,11 @@ oci_bind_by_name($props_query_stmt, ':start_date', $req->start_date);
 oci_bind_by_name($props_query_stmt, ':end_date', $req->end_date);
 
 
+$r = oci_execute($props_query_stmt, OCI_DEFAULT);
 
-try {
-    $r = oci_execute($props_query_stmt, OCI_DEFAULT);
-}
-catch (Exception $err) { 
-    echo 'error!';
+if (!$r) {
+    $m = oci_error($conn);
+    echo $m;
 }
 
 
