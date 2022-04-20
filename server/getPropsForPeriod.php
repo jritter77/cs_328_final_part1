@@ -19,7 +19,7 @@ $req = json_decode($_POST['req']);
 $props_query_str = '
         select * 
         from properties
-        where (date_submitted >= :start_date) and (date_submitted <= :end_date)
+        where (date_submitted >= :start_date) and (date_submitted < :end_date + 1)
 ';
 
 
