@@ -77,4 +77,4 @@ async function populateTable(e) {
   }
 }
 
-$("#submit_btn").click(populateTable);
+$("#submit_btn").click(() => populateTable());
