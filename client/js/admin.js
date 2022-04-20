@@ -1,4 +1,4 @@
-import { get } from "./WebRequest.js";
+import { get, post } from "./WebRequest.js";
 
 const months = [
   "JAN",
@@ -34,7 +34,7 @@ async function populateTable(e) {
   let startDate = $("#start_date");
   let endDate = $("#end_date");
 
-  console.log(startDate, endDate);
+  console.log(startDate.val(), endDate.val());
 
   let props = await getPropsByDate();
   let table = $("#props_table");
