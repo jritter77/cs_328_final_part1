@@ -33,7 +33,7 @@ oci_bind_by_name($props_query_stmt, ':end_date', $req->end_date);
 try {
     $r = oci_execute($props_query_stmt, OCI_DEFAULT);
 }
-catch {
+catch (err) { 
     echo 'error!';
 }
 
