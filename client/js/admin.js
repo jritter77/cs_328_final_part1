@@ -43,7 +43,7 @@ async function populateTable(e) {
   let startDate = $("#start_date");
   let endDate = $("#end_date");
 
-  console.log(convertDate(startDate));
+  console.log(convertDate(startDate.val()));
 
   let props = await getPropsByDate();
   let table = $("#props_table");
