@@ -30,7 +30,9 @@ async function getPropsByDate(startDate, endDate) {
   return JSON.parse(result);
 }
 
-async function populateTable() {
+async function populateTable(e) {
+  e.preventDefault();
+
   let startDate = $("#start_date");
   let endDate = $("#end_date");
 
