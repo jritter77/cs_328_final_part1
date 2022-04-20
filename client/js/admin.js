@@ -31,8 +31,6 @@ async function getPropsByDate(startDate, endDate) {
 }
 
 async function populateTable(e) {
-  e.preventDefault();
-
   let startDate = $("#start_date");
   let endDate = $("#end_date");
 
@@ -72,4 +70,4 @@ async function populateTable(e) {
   }
 }
 
-$("#submit").click(populateTable);
+$("#submit_btn").click(populateTable);
